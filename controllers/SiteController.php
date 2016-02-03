@@ -59,6 +59,8 @@ class SiteController extends Controller
         
         $params = [];
         
+        $params['href'] = $href;
+        
         $params['nav'] = StructureMap::extract(243);
         
         $params['breadcrumbs'] = StructureMap::breadcrumbs($href);
