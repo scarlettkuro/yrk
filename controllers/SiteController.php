@@ -9,6 +9,8 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
+use app\models\Tree_node;
+
 class SiteController extends Controller
 {
     
@@ -50,17 +52,44 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+        
+        $categories = Tree_node::find()
+                ->where([
+                    'parent_id' => 243,
+                    'hidden' => 0
+                ])
+                ->all();
+        $nav_headers = [];
+        foreach($categories as $category) {
+            //echo $category->id;
+            $articles = Tree_node::find()
+                    ->where(['parent_id' => $category->id])
+                    ->all();
+            $list = [];
+            foreach($articles as $article)
+                $list[] = $article->name;
+            
+            $nav_headers[$category->name] =  [
+                'active' => false,
+                'list' => $list
+            ];
+        }
+        
+        
+        
+        $node = $nodes[1];
+        
         $params = [];
         
-        $params['nav'] = parse_ini_file('menu.ini', true);
+        $params['nav'] = $nav_headers;//parse_ini_file('menu.ini', true);
         
         $params['breadcrumbs'] = [ 
-            ['label' => 'Employees', 'url' => ['suka']] 
+            ['label' => $n->title, 'url' => ['suka']] 
         ];
         
-        $params['title'] = "My hui application";
+        $params['title'] = $node->title;
         
-        $params['text'] = "Dawgs? Yeah, dawgs.";
+        $params['text'] = $node->text;//"Dawgs? Yeah, dawgs.";
         
         return $this->render('index', $params);
     }

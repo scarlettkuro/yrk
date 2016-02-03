@@ -55,7 +55,7 @@ AppAsset::register($this);
                 <li class="<?= $category['active']? "active" : ""?>">
                     <a href="/go/<?=$name?>"><?=$name?></a>
                 </li>
-                <? if(isset($category['list'])) :?>
+                <? if(isset($category['list']) && count($category['list'])) :?>
                 <li class="dropdown">
                     <a href="/" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -148,27 +148,7 @@ AppAsset::register($this);
 
             </div>
             
-
-<ol class="breadcrumb">
-     <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        
-            <!--li class="active">Служба записи</li-->
-       
-    
-</ol>
-
-
-    <div itemscope itemtype="http://schema.org/Article">
-        <?= $content ?>
-    </div>
-
-
-
-    
-
-
+<?= $content ?>   
 
         </div>
     </div>
