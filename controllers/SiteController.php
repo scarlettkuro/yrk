@@ -11,6 +11,7 @@ use app\models\ContactForm;
 
 use app\models\Tree_node;
 use app\models\StructureMap;
+use yii\helpers\Url;
 
 class SiteController extends Controller
 {
@@ -58,13 +59,27 @@ class SiteController extends Controller
         
         $params = [];
         
-        $params['nav'] = StructureMap::extract(243);//parse_ini_file('menu.ini', true);
+        $params['nav'] = StructureMap::extract(243);
         
         $params['breadcrumbs'] = StructureMap::breadcrumbs($href);
         
         $params['title'] = $node->title;
         
-        $params['text'] = $node->text;//"Dawgs? Yeah, dawgs.";
+        function suckit($matches) {
+            return $text;
+            var_dump($text);
+            $text = substr($text, 1, strlen($text)-2);
+            return strlen($text);
+            $parts = explode('|', $text);
+            return $parts[0] . " BUT " . $parts[1];
+        }
+        $regexp = "/\[(.*?)\|(.*?)\]/i";
+        $params['text'] = preg_replace_callback($regexp,
+        function ($matches) {
+            return'<a href="' . Url::toRoute(['site/index', 'href' => $matches[1]]) . '">' .
+                    $matches[2] . '</a>';
+        },
+        $node->text);
         
         return $this->render('index', $params);
     }
