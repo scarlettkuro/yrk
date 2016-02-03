@@ -26,7 +26,7 @@ AppAsset::register($this);
     <meta name="wmail-verification" content="b5199296407e634a"/>
 
 
-    <title>Городская бесплатная служба записи на МРТ и КТ</title>
+    <title><?= $this->title ?></title>
     
     <meta name="layout" content="mrt-layout"/>
     <meta name="keywords" content="мрт, магнитно резонансная томография, кт, компьютерная томография, мрт санкт петербург, мрт спб, мрт головного мозга, мрт позвоночника, мрт коленного сустава, кт брюшной полости, кт легких, кт головного мозга,  кт позвоночника"/>
@@ -51,288 +51,21 @@ AppAsset::register($this);
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                
-                    
-                    <li class="active">
-                        <a href="/">Служба записи</a>
-                    </li>
-                    
-                    
-                
-                    
-                    <li class="">
-                        <a href="/faq_mrt">О МРТ</a>
-                    </li>
-                    
-                    
-                        <li class="dropdown">
-                            <a href="/" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                
-                                    <li><a href="/faq_mrt/strah_mrt">Страх МРТ</a></li>
-                                
-                                    <li><a href="/faq_mrt/opisaniye_mrt">Описание Технологии МРТ</a></li>
-                                
-                                    <li><a href="/faq_mrt/pole">Поле МРТ</a></li>
-                                
-                                    <li><a href="/faq_mrt/otkrytyy">МРТ открытого типа</a></li>
-                                
-                                    <li><a href="/faq_mrt/mrt_ili_kt">МРТ или КТ</a></li>
-                                
-                                    <li><a href="/faq_mrt/mrt_protivopokazaniya_mrt">МРТ противопоказания</a></li>
-                                
-                                    <li><a href="/faq_mrt/mrt_opasnost">Вред МРТ</a></li>
-                                
-                                    <li><a href="/faq_mrt/besplatno">Как сделать МРТ бесплатно</a></li>
-                                
-                                    <li><a href="/faq_mrt/mrt_nochyu">МРТ ночью</a></li>
-                                
-                                    <li><a href="/faq_mrt/sankt-peterburg_mrt">МРТ в Санкт-Петербурге</a></li>
-                                
-                                    <li><a href="/faq_mrt/nedorogo_deshevo">МРТ недорого</a></li>
-                                
-                                    <li><a href="/faq_mrt/kruglosutochnomrt">МРТ Круглосуточно</a></li>
-                                
-                                    <li><a href="/faq_mrt/mrt_detyam">МРТ детям</a></li>
-                                
-                                    <li><a href="/faq_mrt/diagnostika">МРТ Диагностика</a></li>
-                                
-                                    <li><a href="/faq_mrt/vse_telo">МРТ всего тела</a></li>
-                                
-                                    <li><a href="/faq_mrt/pokazania">Показания к МРТ</a></li>
-                                
-                                    <li><a href="/faq_mrt/gm_mrt_pok">Показания к МРТ Головного Мозга</a></li>
-                                
-                                    <li><a href="/faq_mrt/srochno_bystro">МРТ Срочно</a></li>
-                                
-                                    <li><a href="/faq_mrt/kak_mrt">Как делают МРТ</a></li>
-                                
-                                    <li><a href="/faq_mrt/gm">МРТ Головного Мозга</a></li>
-                                
-                            </ul>
-                        </li>
-                    
-                
-                    
-                    <li class="">
-                        <a href="/fqt">О КТ</a>
-                    </li>
-                    
-                    
-                        <li class="dropdown">
-                            <a href="/" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                
-                                    <li><a href="/fqt/sankt-peterburg">КТ в Санкт-Петербурге</a></li>
-                                
-                                    <li><a href="/fqt/tekhnologiya_kt">Технология КТ</a></li>
-                                
-                                    <li><a href="/fqt/mskt">МСКТ</a></li>
-                                
-                                    <li><a href="/fqt/podgotovka">Подготовка</a></li>
-                                
-                                    <li><a href="/fqt/kontrast">Контраст</a></li>
-                                
-                                    <li><a href="/fqt/kruglosutochno">Круглосуточно</a></li>
-                                
-                                    <li><a href="/fqt/diagnostikakt">КТ Диагностика</a></li>
-                                
-                                    <li><a href="/fqt/besplatnokt">Как сделать КТ бесплатно</a></li>
-                                
-                                    <li><a href="/fqt/vse_telokt">КТ всего тела</a></li>
-                                
-                                    <li><a href="/fqt/kak_kt">Как делают КТ</a></li>
-                                
-                                    <li><a href="/fqt/kakie_kt">Какие бывают аппараты КТ</a></li>
-                                
-                                    <li><a href="/fqt/kt_detyam">КТ детям</a></li>
-                                
-                                    <li><a href="/fqt/kt_nochuy">КТ ночью</a></li>
-                                
-                                    <li><a href="/fqt/nedorogo_kt">КТ дешево</a></li>
-                                
-                                    <li><a href="/fqt/vredkt">Опасность КТ</a></li>
-                                
-                                    <li><a href="/fqt/pokazaniyakt">Показания КТ</a></li>
-                                
-                                    <li><a href="/fqt/srochno_bystrokt">Срочное КТ</a></li>
-                                
-                                    <li><a href="/fqt/protivopokazaniyakt">Противопоказания КТ</a></li>
-                                
-                                    <li><a href="/fqt/strah_kt">Страх КТ</a></li>
-                                
-                            </ul>
-                        </li>
-                    
-                
-                    
-                    <li class="">
-                        <a href="/vidy_issledovaniy_mrt">МРТ исследования</a>
-                    </li>
-                    
-                    
-                        <li class="dropdown">
-                            <a href="/" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/golovnoy_mozg">Головной мозг</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/sustavy">Суставы</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/pozvonochnik_mrt">Позвоночник</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/angiografiya">Ангиография</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/kishechnik_mrt">Кишечник</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/malyy_taz_mrt">Малый таз</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/chelyust_mrt">Челюсть</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/pochki_mrt">Почки</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/sheya">Шея</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/spina">Спина</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/noga">Нога</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/s_kontrastom">С контрастом</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/krestets_kopchik">Крестец/копчик</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/poyasnitsa">Поясница</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/zheludok">Желудок</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/bryushnaya_polost_mrt">Брюшная полость</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/molochnyye_zhelezy">Молочные железы</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/pechen_mrt">Печень</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/kist">Кисть</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/serdtse">Сердце</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy_mrt/nadpochechniki_mrt">Надпочечники</a></li>
-                                
-                            </ul>
-                        </li>
-                    
-                
-                    
-                    <li class="">
-                        <a href="/vidy_issledovaniy">КТ исследования</a>
-                    </li>
-                    
-                    
-                        <li class="dropdown">
-                            <a href="/" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                
-                                    <li><a href="/vidy_issledovaniy/gm_mrtkt">Головной мозг</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/bryushnaya_polost">Брюшная полость</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/legkiye">Легкие</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/koronarografiya">Коронарография</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/grudnaya_kletka">Грудная клетка</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/nos">Нос</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/chelyust">Челюсть</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/visochnaya_kost">Височная кость</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/pochki">Почки</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/pozvonochnik">Позвоночник</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/kishechnik">Кишечник</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/kt_angiografiya">КТ ангиография</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/nadpochechniki">Надпочечники</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/malyy_taz">Малый таз</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/klyuchitsa">Ключица</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/sustavy_kt">Суставы</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/pechen">Печень</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/sosudy">Сосуды</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/gortan">Гортань</a></li>
-                                
-                                    <li><a href="/vidy_issledovaniy/kopchik">Копчик</a></li>
-                                
-                            </ul>
-                        </li>
-                    
-                
-                    
-                    <li class="">
-                        <a href="/stati">Статьи</a>
-                    </li>
-                    
-                    
-                        <li class="dropdown">
-                            <a href="/" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                
-                                    <li><a href="/stati/tehnologiya_kt">Поговорим о Технологии</a></li>
-                                
-                                    <li><a href="/stati/tehnika_kt">Поговорим о технике</a></li>
-                                
-                                    <li><a href="/stati/istoria_kt">История</a></li>
-                                
-                                    <li><a href="/stati/istoriya_mrt">История МР</a></li>
-                                
-                                    <li><a href="/stati/tehnologiya_mrt">Поговорим о Технологиях МР</a></li>
-                                
-                                    <li><a href="/stati/tehnika_mrt">Поговорим о технике МР</a></li>
-                                
-                                    <li><a href="/stati/fizika_kt">Поговорим о физике</a></li>
-                                
-                                    <li><a href="/stati/naychno">Научно популярно МР</a></li>
-                                
-                                    <li><a href="/stati/uglublenno">Углубленно МР</a></li>
-                                
-                            </ul>
-                        </li>
-                    
-                
-                    
-                    <li class="">
-                        <a href="/dopolnitelno">Дополнительно</a>
-                    </li>
-                    
-                    
-                        <li class="dropdown">
-                            <a href="/" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                
-                                    <li><a href="/dopolnitelno/mrt_saintpetersburg">МРТ в Санкт-Петербурге</a></li>
-                                
-                                    <li><a href="/dopolnitelno/mrt_head">МРТ головного мозга</a></li>
-                                
-                                    <li><a href="/dopolnitelno/mrt_back">МРТ позвоночника</a></li>
-                                
-                                    <li><a href="/dopolnitelno/mrt_spb">МРТ в СПб</a></li>
-                                
-                                    <li><a href="/dopolnitelno/computer_tomography">Компьютерная томография</a></li>
-                                
-                                    <li><a href="/dopolnitelno/computer_tomography_spb">Компьютерная Томография в СПб</a></li>
-                                
-                            </ul>
-                        </li>
-                    
-                
+            <? foreach($this->params['nav'] as $name=>$list) :?>
+                <li class="<? //active ?>">
+                    <a href="/go/<?=$name?>"><?=$name?></a>
+                </li>
+                <? if(isset($list['list'])) :?>
+                <li class="dropdown">
+                    <a href="/" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    <? foreach($list['list'] as $elem) :?>
+                        <li><a href="/go/<?=$name?>/<?=$elem?>"><?=$elem?></a></li>
+                    <? endforeach;?>
+                    </ul>
+                </li>
+                <? endif; ?>
+            <? endforeach;?>
             </ul>
         </div>
     </div>
@@ -368,8 +101,8 @@ AppAsset::register($this);
 
 <p style="padding: 20px 20px 20px 30px">
     <span class="glyphicon glyphicon-ok"></span> подбор оптимальной клиники и запись на обследование<br>
-    
-    
+
+
     <span class="glyphicon glyphicon-ok"></span> запись по всем районам города<br>
     <span class="glyphicon glyphicon-ok"></span> скидки при записи через нас<br>
 </p>
@@ -422,7 +155,7 @@ AppAsset::register($this);
         ]) ?>
         
             <!--li class="active">Служба записи</li-->
-        
+       
     
 </ol>
 
@@ -454,41 +187,7 @@ AppAsset::register($this);
 <script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript" ></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript" ></script>
 <script type="text/javascript">
-(function (d, w, c) {
-    (w[c] = w[c] || []).push(function() {
-        try {
-            w.yaCounter22208978 = new Ya.Metrika({id:22208978,
-                    webvisor:true,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true});
-          w.yaCounter = w.yaCounter22208978;
-        } catch(e) { }
-    });
 
-    var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-    if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
-})(document, window, "yandex_metrika_callbacks");
-
-    $('.trigger').popover({
-        trigger: 'hover'
-    });
-    $('.trigger-right').popover({
-        trigger: 'hover',
-        placement: 'right'
-    });
-    $(function () {
-        $('.ckeditor table').addClass('table table-striped');
-        $('.ckeditor img').css('margin', "0 25px 5px 5px");
-    });
 </script>
 <?php $this->endBody() ?>
 </body>

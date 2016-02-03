@@ -23,6 +23,9 @@ class AppAsset extends AssetBundle
         'css/docs.min.css',
     ];
     public $js = [
+        'https://code.jquery.com/jquery-1.11.1.min.js',
+        'http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js',
+        'js/index.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

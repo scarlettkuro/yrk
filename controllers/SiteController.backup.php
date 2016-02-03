@@ -11,7 +11,6 @@ use app\models\ContactForm;
 
 class SiteController extends Controller
 {
-    
     public function behaviors()
     {
         return [
@@ -50,18 +49,46 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $params = [];
-        
-        $params['nav'] = parse_ini_file('menu.ini', true);
-        
-        $params['breadcrumbs'] = [ 
-            ['label' => 'Employees', 'url' => ['suka']] 
-        ];
-        
-        $params['title'] = "My hui application";
-        
-        $params['text'] = "Dawgs? Yeah, dawgs.";
-        
-        return $this->render('index', $params);
+        return $this->render('index');
+    }
+
+    public function actionLogin()
+    {
+        if (!\Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
+        $model = new LoginForm();
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->goBack();
+        }
+        return $this->render('login', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+
+        return $this->goHome();
+    }
+
+    public function actionContact()
+    {
+        $model = new ContactForm();
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+
+            return $this->refresh();
+        }
+        return $this->render('contact', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionAbout()
+    {
+        return $this->render('about');
     }
 }
