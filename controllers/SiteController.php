@@ -10,6 +10,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 
 use app\models\Tree_node;
+use app\models\StructureMap;
 
 class SiteController extends Controller
 {
@@ -50,42 +51,16 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionIndex()
+    public function actionIndex($href = "home")
     {
-        
-        $categories = Tree_node::find()
-                ->where([
-                    'parent_id' => 243,
-                    'hidden' => 0
-                ])
-                ->all();
-        $nav_headers = [];
-        foreach($categories as $category) {
-            //echo $category->id;
-            $articles = Tree_node::find()
-                    ->where(['parent_id' => $category->id])
-                    ->all();
-            $list = [];
-            foreach($articles as $article)
-                $list[] = $article->name;
-            
-            $nav_headers[$category->name] =  [
-                'active' => false,
-                'list' => $list
-            ];
-        }
-        
-        
-        
-        $node = $nodes[1];
+       
+        $node = Tree_node::find()->where(['href' => $href])->one();
         
         $params = [];
         
-        $params['nav'] = $nav_headers;//parse_ini_file('menu.ini', true);
+        $params['nav'] = StructureMap::extract(243);//parse_ini_file('menu.ini', true);
         
-        $params['breadcrumbs'] = [ 
-            ['label' => $n->title, 'url' => ['suka']] 
-        ];
+        $params['breadcrumbs'] = StructureMap::breadcrumbs($href);
         
         $params['title'] = $node->title;
         

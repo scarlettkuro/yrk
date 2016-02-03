@@ -38,6 +38,14 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'urlManager' => [
+            //'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'enableStrictParsing' => false,
+            'rules' => [
+                //'<pidor:\w+>' => 'site/index',
+            ],
+        ],
     ],
     'params' => $params,
 ];

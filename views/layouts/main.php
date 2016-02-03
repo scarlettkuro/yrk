@@ -8,6 +8,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -51,16 +52,18 @@ AppAsset::register($this);
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-            <? foreach($this->params['nav'] as $name=>$category) :?>
-                <li class="<?= $category['active']? "active" : ""?>">
-                    <a href="/go/<?=$name?>"><?=$name?></a>
+            <? foreach($this->params['nav'] as $category) :?>
+                <li class="<?/*"active"*/?>">
+                    <a href="<?=Url::toRoute(['site/index', 'href' => $category['href']])?>"><?=$category['name']?></a>
                 </li>
                 <? if(isset($category['list']) && count($category['list'])) :?>
                 <li class="dropdown">
                     <a href="/" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                    <? foreach($category['list'] as $elem) :?>
-                        <li><a href="/go/<?=$name?>/<?=$elem?>"><?=$elem?></a></li>
+                    <? foreach($category['list'] as $article) :?>
+                        <li><a href="<?=Url::toRoute(['site/index', 'href' => $article['href']])?>">
+                            <?=$article['name']?>
+                        </a></li>
                     <? endforeach;?>
                     </ul>
                 </li>
