@@ -17,8 +17,9 @@ AppAsset::register($this);
 
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
+    <?= Html::csrfMetaTags() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/favicon.ico">
+    <link rel="icon" type="image/png" href="images/favicon.ico.png">
 
     <meta name="yandex-verification" content="7743e932608973fc"/>
     <meta name="google-site-verification" content="QA50dQViZPt922rl_LDJW5KvJE0k_EiN66Uuk6D9pjM"/>
@@ -26,19 +27,10 @@ AppAsset::register($this);
 
 
     <title>Городская бесплатная служба записи на МРТ и КТ</title>
-
-    
     
     <meta name="layout" content="mrt-layout"/>
-
     <meta name="keywords" content="мрт, магнитно резонансная томография, кт, компьютерная томография, мрт санкт петербург, мрт спб, мрт головного мозга, мрт позвоночника, мрт коленного сустава, кт брюшной полости, кт легких, кт головного мозга,  кт позвоночника"/>
     <meta name="description" content="В нашей клинике Вы можете пройти следующие мрт и кт исследования: мрт (томография) головного мозга, мрт позвоночника, мрт коленного сустава,  компьютерная томография (кт) головного мозга, кт брюшной полости, кт легких, кт позвоночника и т.д."/>
-
-    <!--link href="/static/css/my.css" type="text/css" rel="stylesheet" media="screen, projection" />
-
-
-    <link rel="stylesheet" href="/css/flatly/bootstrap.min.css">
-    <link href="/css/flatly/docs.min.css" rel="stylesheet"-->
 
     <?php $this->head() ?>
 </head>
