@@ -51,15 +51,15 @@ AppAsset::register($this);
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-            <? foreach($this->params['nav'] as $name=>$list) :?>
-                <li class="<? //active ?>">
+            <? foreach($this->params['nav'] as $name=>$category) :?>
+                <li class="<?= $category['active']? "active" : ""?>">
                     <a href="/go/<?=$name?>"><?=$name?></a>
                 </li>
-                <? if(isset($list['list'])) :?>
+                <? if(isset($category['list'])) :?>
                 <li class="dropdown">
                     <a href="/" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                    <? foreach($list['list'] as $elem) :?>
+                    <? foreach($category['list'] as $elem) :?>
                         <li><a href="/go/<?=$name?>/<?=$elem?>"><?=$elem?></a></li>
                     <? endforeach;?>
                     </ul>
@@ -184,11 +184,7 @@ AppAsset::register($this);
 
 
 
-<script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript" ></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript" ></script>
-<script type="text/javascript">
 
-</script>
 <?php $this->endBody() ?>
 </body>
 
