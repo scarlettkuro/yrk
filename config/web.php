@@ -39,11 +39,12 @@ $config = [
         ],
         'db' => require(__DIR__ . '/db.php'),
         'urlManager' => [
-            //'enablePrettyUrl' => true,
+            'class' => 'yii\web\UrlManager',
+            'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'enableStrictParsing' => false,
+            //'enableStrictParsing' => false,
             'rules' => [
-                //...,
+                ['class' => 'app\models\LineUrl']
             ],
         ],
     ],

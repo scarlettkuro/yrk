@@ -29,5 +29,9 @@ class SiteController extends Controller
         return $this->render('index', $params);
     }
     
+    public function actionRedirect($url = "/")
+    {
+        return $this->redirect($url);
+    }
     
 }

@@ -47,19 +47,19 @@ class Tree_node extends ActiveRecord {
     
     public static function breadcrumbs($href) {
         
-        function TOPfilter($label) {
+        $TOPfilter = function ($label) {
             return $label == 'TOP' ? "" : $label;
-        }
+        };
         
         $node = Tree_node::find()->where(['href' => $href])->one();
         
         $breadcrumbs = [ 
-            ['label' => TOPfilter($node->name), 'url' => $node->href] 
+            ['label' => $TOPfilter($node->name), 'url' => $node->href] 
         ];
         
         while($node->parent_id != NULL) {
             $node = Tree_node::find()->where(['id' => $node->parent_id])->one();
-            $breadcrumbs[] = ['label' => TOPfilter($node->name), 'url' => $node->href];
+            $breadcrumbs[] = ['label' => $TOPfilter($node->name), 'url' => $node->href];
         }
         
         return $breadcrumbs;
