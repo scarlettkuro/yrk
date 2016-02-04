@@ -8,6 +8,7 @@
 
 namespace app\models;
 
+use yii\helpers\Url;
 /**
  * Description of FilterLocator
  *
@@ -28,12 +29,7 @@ class Filters {
     
     public static function imagesSrc($prefix, $suffix, $text) {
         
-        $filter = function ($matches) {
-            $src = $matches['2'];
-            return $matches[1] . $prefix . $src . $suffix;
-        };
-        
-        return preg_replace_callback("/(<img[^>]*src *= *[\"']?)([^\"']*)/i", $filter, $text);
+        return preg_replace("/(<img[^>]*src *= *[\"']?)([^\"']*)/i", "$1 $prefix$2$suffix", $text);
     }
     
 }
