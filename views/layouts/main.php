@@ -78,7 +78,7 @@ AppAsset::register($this);
             <div class="map"></div>
 
             <div class="hidden-xs" style="position: relative">
-                <img class="sidebar-avatar" src="images/avatar.jpg"/>
+                <img class="sidebar-avatar" src="/images/avatar.jpg"/>
             </div>
 
             <h3 class="title">
@@ -87,7 +87,7 @@ AppAsset::register($this);
                 </a>
             </h3>
 
-            <div style="text-align: center"><img style="width: 240px" src="images/phone.png" alt="Центр записи"/></div>
+            <div style="text-align: center"><img style="width: 240px" src="/images/phone.png" alt="Центр записи"/></div>
 
             <p style="text-align: center">
                 <i>
@@ -113,7 +113,7 @@ AppAsset::register($this);
             <div class="map"></div>
 
             <div class="hidden-xs" style="position: relative">
-                <img class="sidebar-avatar" src="images/avatar.jpg"/>
+                <img class="sidebar-avatar" src="/images/avatar.jpg"/>
             </div>
 
             <h3 class="title">
@@ -122,7 +122,7 @@ AppAsset::register($this);
                 </a>
             </h3>
 
-            <div style="text-align: center"><img style="width: 240px" src="images/phone.png" alt="Центр записи"/></div>
+            <div style="text-align: center"><img style="width: 240px" src="/images/phone.png" alt="Центр записи"/></div>
 
             <p style="text-align: center">
                 <i>
