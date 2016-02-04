@@ -43,7 +43,7 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'rules' => [
-                //'<pidor:\w+>' => 'site/index',
+                //...,
             ],
         ],
     ],
