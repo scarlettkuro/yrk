@@ -5,7 +5,6 @@
 use yii\widgets\Breadcrumbs;
 use yii\helpers\Url;
 
-
 $this->title = $title;
 $this->params['nav'] = $nav;
 $this->params['href'] = $href;
