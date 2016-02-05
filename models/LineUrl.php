@@ -19,7 +19,7 @@ class LineUrl implements UrlRuleInterface {
     
     
     public function createUrl($manager, $route, $params) {
-        return substr(LineUrl::getLineUrl($params['href']), 1);
+        return substr(LineUrl::getLineUrl($params['href']),1);
         
     }
 
@@ -45,7 +45,7 @@ class LineUrl implements UrlRuleInterface {
         $breadcrumbs = Tree_node::breadcrumbs(Tree_node::find()->where(['href'=>$href])->one()->href);
         $url = '';
         foreach($breadcrumbs as $crumb) 
-            $url =   $crumb['url'] . '/' . $url;
+            $url .=  $crumb['url'] . '/';
         
         return $url;
     }

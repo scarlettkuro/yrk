@@ -2,8 +2,6 @@
 
 /* @var $this yii\web\View */
 
-use yii\widgets\Breadcrumbs;
-
 $this->title = $title;
 $this->params['nav'] = $nav;
 $this->params['href'] = $href;
@@ -11,7 +9,11 @@ $this->params['href'] = $href;
 
 <? if(isset($breadcrumbs)) :?>
 <ol class="breadcrumb">
-    <?= Breadcrumbs::widget(['links' => $breadcrumbs]) ?>   
+    <? $count =  count($breadcrumbs); 
+    foreach(array_slice($breadcrumbs,1, $count-2) as $breadcrumb) : ?>
+        <li><a><?=$breadcrumb['label']?></a></li>
+    <? endforeach; ?>
+    <li><?=$breadcrumbs[$count-1]['label']?></li>
 </ol>
 <? endif; ?>
 <h2 itemprop="name"><?=$title?></h2>

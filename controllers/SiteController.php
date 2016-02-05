@@ -31,7 +31,7 @@ class SiteController extends Controller
     
     public function actionRedirect($url = "/")
     {
-        return $this->redirect($url);
+        return $this->redirect(substr($url,1));
     }
     
 }

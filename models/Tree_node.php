@@ -47,6 +47,8 @@ class Tree_node extends ActiveRecord {
     
     public static function breadcrumbs($href) {
         
+        if ($href == "home") return [];
+        
         $TOPfilter = function ($label) {
             return $label == 'TOP' ? "" : $label;
         };
@@ -62,6 +64,6 @@ class Tree_node extends ActiveRecord {
             $breadcrumbs[] = ['label' => $TOPfilter($node->name), 'url' => $node->href];
         }
         
-        return $breadcrumbs;
+        return array_reverse($breadcrumbs);
     }
 }
