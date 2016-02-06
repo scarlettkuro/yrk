@@ -19,11 +19,14 @@ class LineUrl implements UrlRuleInterface {
     
     
     public function createUrl($manager, $route, $params) {
-        return substr(LineUrl::getLineUrl($params['href']),1);
-        
+        $url = LineUrl::getLineUrl($params['href']);
+        if ($params['href'] != "home")
+            $url = substr($url,1);
+        return $url;
     }
 
     public function parseRequest($manager, $request) {
+        
         if ($request->url == "/") 
             return ["site/index",[]];
         
@@ -32,6 +35,8 @@ class LineUrl implements UrlRuleInterface {
         $href = strlen($url_parts[$parts-1]) > 0 ? $url_parts[$parts-1] : $url_parts[$parts-2];
         
         $url = LineUrl::getLineUrl($href);
+        
+        //die($request->url == $url);
         
         if ($request->url == $url)
             return ["site/index",['href'=>$href]];

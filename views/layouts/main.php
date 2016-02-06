@@ -9,7 +9,6 @@ use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
-
 <?php $this->beginPage() ?>
 <!DOCTYPE HTML>
 <html lang="<?= Yii::$app->language ?>">
@@ -50,7 +49,7 @@ AppAsset::register($this);
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <? foreach($this->params['nav'] as $category) :?>
-                <li class="<?= $this->params['href']==$category['href']?  "active" : ""?>">
+                <li class="<?= $this->params['href']==$category['href'] ?  "active" : ""?>">
                     <a href="<?=Url::toRoute(['site/index', 'href' => $category['href']])?>"><?=$category['name']?></a>
                 </li>
                 <? if(isset($category['list']) && count($category['list'])) :?>

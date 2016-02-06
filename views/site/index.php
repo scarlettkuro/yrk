@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+use yii\helpers\Url;
 
 $this->title = $title;
 $this->params['nav'] = $nav;
@@ -11,7 +12,7 @@ $this->params['href'] = $href;
 <ol class="breadcrumb">
     <? $count =  count($breadcrumbs); 
     foreach(array_slice($breadcrumbs,1, $count-2) as $breadcrumb) : ?>
-        <li><a><?=$breadcrumb['label']?></a></li>
+        <li><a href="<?=Url::toRoute(['site/index', 'href' => $breadcrumb['url']])?>"><?=$breadcrumb['label']?></a></li>
     <? endforeach; ?>
     <li><?=$breadcrumbs[$count-1]['label']?></li>
 </ol>
