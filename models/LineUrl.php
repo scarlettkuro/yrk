@@ -19,10 +19,9 @@ class LineUrl implements UrlRuleInterface {
     
     
     public function createUrl($manager, $route, $params) {
-        $url = LineUrl::getLineUrl($params['href']);
-        if ($params['href'] != "home")
-            $url = substr($url,1);
-        return $url;
+        if ($params['href'] == "home")
+            return '';
+        return substr(LineUrl::getLineUrl($params['href']), 1);
     }
 
     public function parseRequest($manager, $request) {

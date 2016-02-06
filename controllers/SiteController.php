@@ -11,6 +11,7 @@ class SiteController extends Controller
     
     public function actionIndex($href = "home")
     {
+                
         $node = Tree_node::find()->where(['href' => $href])->one();
         
         $params = [];
@@ -31,7 +32,7 @@ class SiteController extends Controller
     
     public function actionRedirect($url = "/")
     {
-        return $this->redirect(substr($url,1));
+        return $this->redirect($url);
     }
     
 }

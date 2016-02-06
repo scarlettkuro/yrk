@@ -147,7 +147,6 @@ AppAsset::register($this);
     <!-- Yandex.Metrika counter -->
     <noscript><div><img src="//mc.yandex.ru/watch/22208978" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
-
     <?php $this->endBody() ?>
 </body>
 </html>

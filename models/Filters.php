@@ -28,8 +28,8 @@ class Filters {
     }
     
     public static function imagesSrc($prefix, $suffix, $text) {
-        
-        return preg_replace("/(<img[^>]*src *= *[\"']?)([^\"']*)/i", "$1 $prefix$2$suffix", $text);
+        $class = '" class ="ckeditor';
+        return preg_replace("/(<img[^>]*src *= *[\"']?)([^\"']*)/i", "$1 $prefix$2$suffix$class", $text);
     }
     
 }

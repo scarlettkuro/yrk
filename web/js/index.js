@@ -29,7 +29,8 @@
         trigger: 'hover',
         placement: 'right'
     });
+    
     $(function () {
-        $('.ckeditor table').addClass('table table-striped');
-        $('.ckeditor img').css('margin', "0 25px 5px 5px");
+        $('table').addClass('table table-striped');
+        $('.ckeditor').css('margin', "0 25px 5px 5px");
     });
